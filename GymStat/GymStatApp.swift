@@ -10,8 +10,11 @@ import SwiftUI
 @main
 struct GymStatApp: App {
     var body: some Scene {
-        WindowGroup {
+        WindowGroup{
+            
             ContentView()
         }
+        
     }
 }
+
