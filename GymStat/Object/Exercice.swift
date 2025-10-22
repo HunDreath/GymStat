@@ -14,11 +14,3 @@ struct Exercise: Identifiable, Codable, Equatable {
     var bodyPart: BodyPart
     
 }
-
-
-struct BodyPart: Identifiable, Codable, Equatable {
-    
-    let id = UUID()
-    var name: String
-    
-}

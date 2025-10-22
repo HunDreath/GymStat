@@ -12,7 +12,6 @@ struct User: Codable {
     
     var nickName: String
     
-    
 }
 
 

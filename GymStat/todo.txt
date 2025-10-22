@@ -1,0 +1,27 @@
+
+ <-- View --> 
+
+    --> Faire une premiere page Profile 
+
+    --> Transformer la page de bienvenue en page d'indication concernant le fonctionnement de l'application 
+
+<-- User --> 
+
+    --> Voir comment on peut utiliser le user mais pour le moment le meiux c'est de rester comme ca 
+
+
+<-- Series -->
+
+    --> Voir comment on peut rendre l'interface bcp plus lisible et fonctionnel 
+
+<-- Workout --> 
+
+    --> Creation d'une page affichant toute les Workout et pourquoi pas 
+        ajouter des filtres afin de trouver une workout par son nom des exercices une date etc ?affichant
+    
+    --> Proposer au clique d'une workout session un onglet statistique 
+
+<-- Onglet statistique --> 
+
+    --> cree une vue qui permet d'afficher les stats pour un exo donnes pour suivre sa progression en terme
+        de poid ou de repetition 

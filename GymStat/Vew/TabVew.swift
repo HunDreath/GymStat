@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct TabVew: View {
+
     @State private var selectedTab = 0
+
     @State private var showingNewSession = false
+    
     let user: User
 
     var body: some View {
         VStack(spacing: 0) {
             // Affiche la vue selon l'onglet sélectionné
             Group {
+                
                 if selectedTab == 0 {
                     HomeVew(user: user)
                 } else if selectedTab == 1 {
