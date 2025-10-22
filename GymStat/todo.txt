@@ -27,4 +27,6 @@
         de poid ou de repetition 
 
 
---> remettre en place les fichiers perdu lors de la creation du clone 
+--> remettre en place les fichiers perdu lors de la creation du clone
+
+<-- creer une doc de regle de fonntStyle --> 

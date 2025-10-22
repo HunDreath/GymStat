@@ -72,6 +72,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A4B1BFA2EA9971F00C207CA /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
 		1AC3969A2E96EF6C0020F780 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +106,7 @@
 				1AC396A62E96EF6C0020F780 /* GymStatApp.swift */,
 				1AC396AA2E96EF6E0020F780 /* Assets.xcassets */,
 				1AC396AC2E96EF6E0020F780 /* Preview Content */,
+				1A4B1BFA2EA9971F00C207CA /* Asset */,
 			);
 			path = GymStat;
 			sourceTree = "<group>";
