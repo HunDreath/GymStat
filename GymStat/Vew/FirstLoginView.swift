@@ -15,7 +15,7 @@ struct FirstLoginView: View {
     var body: some View {
         ZStack {
             // Dégradé de fond
-            LinearGradient(gradient: Gradient(colors: [.purple, .blue]),
+            LinearGradient(gradient: Gradient(colors: [.purple, .blue, .pink]),
                            startPoint: .topLeading,
                            endPoint: .bottomTrailing)
             .ignoresSafeArea()
@@ -23,12 +23,16 @@ struct FirstLoginView: View {
             VStack(spacing: 30) {
                 
                 // Icône d'accueil
-                Image(systemName: "figure.strengthtraining.traditional")
+                Image(systemName: "dumbbell.fill")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100, height: 100)
-                    .foregroundColor(.white)
-                    .padding(.top, 40)
+                    .foregroundStyle(LinearGradient(
+                        gradient: Gradient(colors: [.orange , .red]),
+                        startPoint: .top,
+                        endPoint: .bottom))
+                    .rotationEffect(.degrees(prenom.isEmpty ? 0 : 10))
+                    .animation(.easeInOut(duration: 0.3), value: prenom)
                 
                 // Titre de bienvenue
                 Text("Bienvenue sur **GymStat**")
@@ -39,14 +43,11 @@ struct FirstLoginView: View {
                 
                 // Champ de texte pour prénom
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Ton prénom")
-                        .font(.headline)
-                        .foregroundColor(.white)
                     
                     TextField("Entre ton prénom", text: $prenom)
                         .padding()
-                        .background(.white)
-                        .cornerRadius(10)
+                        .background(Color.white.opacity(0.9))
+                        .cornerRadius(12)
                         .shadow(radius: 3)
                 }
                 .padding(.horizontal)
@@ -65,6 +66,7 @@ struct FirstLoginView: View {
                         .cornerRadius(10)
                         .shadow(radius: 5)
                 }
+                .animation(.easeInOut(duration: 0.2 ), value : prenom)
                 .disabled(prenom.isEmpty)
                 .padding(.horizontal)
                 
@@ -74,9 +76,10 @@ struct FirstLoginView: View {
     }
 }
 
+// Preview
 struct FirstLoginView_Previews: PreviewProvider {
     static var previews: some View {
         FirstLoginView()
-            .environmentObject(UserService())
+            .environmentObject(UserService(forPreview: true))
     }
 }

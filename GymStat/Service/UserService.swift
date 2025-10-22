@@ -14,8 +14,18 @@ class UserService: ObservableObject {
     
     private let userKey = "storedUser"
     
+    // Init App
     init(){
         loadUser()
+    }
+    
+    // Init Preview
+    init(forPreview: Bool){
+        if forPreview {
+            self.currentUser = User(nickName: "GymStat")
+        } else {
+            loadUser()
+        }
     }
     
     func saveUser(user: User){

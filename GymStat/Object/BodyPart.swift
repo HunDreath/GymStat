@@ -5,8 +5,7 @@
 //  Created by Lucas Morin on 22/10/2025.
 //
 
-struct BodyPart: Identifiable, Codable, Equatable {
+struct BodyPart: Codable{
     
-    let id = UUID()
     var name: String
 }
