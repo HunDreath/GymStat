@@ -25,3 +25,6 @@
 
     --> cree une vue qui permet d'afficher les stats pour un exo donnes pour suivre sa progression en terme
         de poid ou de repetition 
+
+
+--> remettre en place les fichiers perdu lors de la creation du clone 

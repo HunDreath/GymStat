@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A4B1BF72EA9919000C207CA /* BodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4B1BF62EA9919000C207CA /* BodyPart.swift */; };
+		1A4B1BF92EA991B700C207CA /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A4B1BF82EA991B700C207CA /* todo.txt */; };
 		1A82A7282E9F2879009DF447 /* BodyPartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A82A7272E9F2879009DF447 /* BodyPartData.swift */; };
 		1AC396A72E96EF6C0020F780 /* GymStatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC396A62E96EF6C0020F780 /* GymStatApp.swift */; };
 		1AC396AB2E96EF6E0020F780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AC396AA2E96EF6E0020F780 /* Assets.xcassets */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A4B1BF62EA9919000C207CA /* BodyPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
+		1A4B1BF82EA991B700C207CA /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = todo.txt; path = GymStat/todo.txt; sourceTree = "<group>"; };
 		1A82A7272E9F2879009DF447 /* BodyPartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPartData.swift; sourceTree = "<group>"; };
 		1AC396A32E96EF6C0020F780 /* GymStat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymStat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC396A62E96EF6C0020F780 /* GymStatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymStatApp.swift; sourceTree = "<group>"; };
@@ -71,6 +75,7 @@
 		1AC3969A2E96EF6C0020F780 = {
 			isa = PBXGroup;
 			children = (
+				1A4B1BF82EA991B700C207CA /* todo.txt */,
 				1AC396A52E96EF6C0020F780 /* GymStat */,
 				1AC396A42E96EF6C0020F780 /* Products */,
 			);
@@ -123,6 +128,7 @@
 		1AC396D32E96F3820020F780 /* Object */ = {
 			isa = PBXGroup;
 			children = (
+				1A4B1BF62EA9919000C207CA /* BodyPart.swift */,
 				1AC396D72E96F3AC0020F780 /* User.swift */,
 				1AC396E02E9859D60020F780 /* Exercice.swift */,
 				1AC396E22E985A220020F780 /* Series.swift */,
@@ -220,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AC396AE2E96EF6E0020F780 /* Preview Assets.xcassets in Resources */,
+				1A4B1BF92EA991B700C207CA /* todo.txt in Resources */,
 				1AC396AB2E96EF6E0020F780 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +254,7 @@
 				1AC396A72E96EF6C0020F780 /* GymStatApp.swift in Sources */,
 				1AC396F52E9863BB0020F780 /* ExerciseService.swift in Sources */,
 				1AC396CF2E96F1A80020F780 /* SettingsVew.swift in Sources */,
+				1A4B1BF72EA9919000C207CA /* BodyPart.swift in Sources */,
 				1AC396E52E985A7C0020F780 /* WorkoutExercise.swift in Sources */,
 				1AC396F12E98615F0020F780 /* EcerciseDetailView.swift in Sources */,
 				1AC396EC2E985FAC0020F780 /* AddExerciseView.swift in Sources */,
