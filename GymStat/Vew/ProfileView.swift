@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-struct ProfileVew: View {
+struct ProfileView: View {
     
     @EnvironmentObject var userService: UserService
     @State private var isEditing = false
     @State private var editedName = ""
-    
-    let user: User
     
     var body: some View {
         ZStack {
@@ -21,7 +19,7 @@ struct ProfileVew: View {
             LinearGradient(gradient: Gradient(colors: [.purple, .blue]),
                            startPoint: .topLeading,
                            endPoint: .bottomTrailing)
-            .ignoresSafeArea()
+                .ignoresSafeArea()
             
             VStack(spacing: 30) {
                 
@@ -54,9 +52,10 @@ struct ProfileVew: View {
                     // Bouton modifier / enregistrer
                     Button(action: {
                         if isEditing {
-                            var updatedUser = user
-                            updatedUser.nickName = editedName
-                            userService.saveUser(user: updatedUser)
+                            if var currentUser = userService.currentUser {
+                                currentUser.nickName = editedName
+                                userService.saveUser(user: currentUser)
+                            }
                         } else {
                             editedName = user.nickName
                         }
@@ -74,6 +73,7 @@ struct ProfileVew: View {
                     .padding(.horizontal)
                     
                     Spacer()
+                    
                 } else {
                     Text("Aucun utilisateur connecté.")
                         .foregroundColor(.white.opacity(0.7))
@@ -83,9 +83,21 @@ struct ProfileVew: View {
     }
 }
 
-struct ProfileVew_Previews: PreviewProvider {
+// MARK: - Preview
+
+struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileVew(user: User(nickName: "GymStat"))
+        let mockService = UserService()
+        mockService.currentUser = User(nickName: "GymStat") // utilisateur mock
         
+        return Group {
+            ProfileView()
+                .environmentObject(mockService)
+                .preferredColorScheme(.light)
+            
+            ProfileView()
+                .environmentObject(mockService)
+                .preferredColorScheme(.dark)
+        }
     }
 }

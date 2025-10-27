@@ -11,9 +11,9 @@ struct ExercisesData{
     
     static let predefinedExercises: [Exercise] = [
         Exercise(name: "Pompes" , bodyPart: BodyPart(name: "Pec") ),
-        Exercise(name: "Squats" , bodyPart: BodyPart(name: "Quadriceps")),
+        Exercise(name: "Squats" , bodyPart: BodyPart(name: "Jambe")),
         Exercise(name: "Tractions", bodyPart: BodyPart(name: "Dos")),
-        Exercise(name: "Fentes" , bodyPart: BodyPart(name: "Quadriceps")),
+        Exercise(name: "Fentes" , bodyPart: BodyPart(name: "Jambe")),
         Exercise(name: "Bench" , bodyPart: BodyPart(name: "Pec"))
         
     ]

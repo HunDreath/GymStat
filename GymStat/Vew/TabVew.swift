@@ -1,39 +1,37 @@
-//
-//  TabVew.swift
-//  GymStat
-//
-//  Created by Lucas Morin on 08/10/2025.
-//
-
 import SwiftUI
 
-struct TabVew: View {
-
+struct MainTabView: View {
     @State private var selectedTab = 0
-
     @State private var showingNewSession = false
     
-    let user: User
+    @EnvironmentObject var userService: UserService
+    @EnvironmentObject var exerciseService: ExerciseService
 
     var body: some View {
         VStack(spacing: 0) {
-            // Affiche la vue selon l'onglet sélectionné
+            
+            // --- Contenu selon l'onglet sélectionné ---
             Group {
-                
-                if selectedTab == 0 {
-                    HomeVew(user: user)
-                } else if selectedTab == 1 {
-                    ProfileVew(user: user)
+                switch selectedTab {
+                case 0:
+                    HomeVew()
+                        .environmentObject(exerciseService)
+                        .environmentObject(userService)
+                case 1:
+                    ProfileView()
+                        .environmentObject(userService)
+                default:
+                    HomeVew()
+                        .environmentObject(exerciseService)
+                        .environmentObject(userService)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             
-            // Barre d'onglets personnalisée
+            // --- Barre d’onglets ---
             HStack {
                 Spacer()
-                Button(action: {
-                    selectedTab = 0
-                }) {
+                Button(action: { selectedTab = 0 }) {
                     VStack {
                         Image(systemName: "house")
                         Text("Accueil")
@@ -42,21 +40,17 @@ struct TabVew: View {
                 }
                 Spacer()
                 
-                Button(action: {
-                    showingNewSession.toggle()
-                }) {
+                Button(action: { showingNewSession.toggle() }) {
                     Image(systemName: "plus.circle.fill")
                         .resizable()
                         .frame(width: 60, height: 60)
                         .foregroundColor(.purple)
                         .shadow(radius: 5)
                 }
-                .offset(y: -20) // Pour que le bouton dépasse un peu la barre
+                .offset(y: -20)
                 Spacer()
                 
-                Button(action: {
-                    selectedTab = 1
-                }) {
+                Button(action: { selectedTab = 1 }) {
                     VStack {
                         Image(systemName: "person")
                         Text("Profil")
@@ -72,7 +66,22 @@ struct TabVew: View {
         .edgesIgnoringSafeArea(.bottom)
         .sheet(isPresented: $showingNewSession) {
             NewSessionView()
+                .environmentObject(exerciseService)
         }
     }
 }
 
+// MARK: - Preview
+
+struct MainTabView_Previews: PreviewProvider {
+    static var previews: some View {
+        let mockUserService = UserService()
+        mockUserService.currentUser = User(nickName: "GymStat") // utilisateur mock
+        let mockExerciseService = ExerciseService()
+        
+        return MainTabView()
+            .environmentObject(mockUserService)
+            .environmentObject(mockExerciseService)
+            .preferredColorScheme(.light)
+    }
+}
